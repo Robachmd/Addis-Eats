@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+} */
+
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffdb6e;
+    --foreground: #ededed;
+  }
+} */
+
+@theme {
+  --color-taupe-brown: #58413d;
+  --color-golden-ochre: #7e5700;
+  --color-pure-white: #ffffff;
+  --color-dark-espresso: #221a16;
+  --color-mahogany-red: #7a1401;
+  --color-warm-taupe: #8c716b;
+  --color-dusty-rose-cream: #f6e5de;
+  --color-navajo-white: #ffdead;
+  --color-salmon-coral: #ffb4a4;
+  --color-soft-coral-tint: #fff1eb;
+  --color-dark-forest-green: #184530;
+  --color-pale-warm-white: #fff8f6;
+  --color-pure-black: #000000;
+  --color-chocolate-amber: #281900;
+  --color-light-mint-green: #bdeecf;
+  --color-pale-dusty-rose: #e7d7d0;
+  --color-pale-rose-beige: #f0dfd8;
+  --color-peach-cream: #fceae4;
+  --color-rust-red: #9b2c16;
+}
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--soft-coral-tint);
+  color: var(--dark-espresso);
+  }
+  
