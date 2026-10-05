@@ -18,7 +18,7 @@ export default function MenuWrapper({ dishes }) {
                 </aside>
 
                 <main className="flex-1 min-w-0">
-                <div className="flex px-6 pt-6 mr-70 justify-center "> 
+                <div className="flex px-6 pt-6 mr-50 justify-center "> 
                     <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search dishes eg. kitfo, tibs..." className="w-full rounded-lg border  border-gray-300 bg-white px-4 py-2 text-dark-espresso outline-none focus:border-mahogany-red" />
                 </div>
 
