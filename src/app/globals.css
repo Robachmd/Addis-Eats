@@ -42,7 +42,9 @@
 }
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  background-color: var(--soft-coral-tint);
+  background-color: theme(--color-soft-coral-tint);
   color: var(--dark-espresso);
   }
-  
+  *{
+    box-sizing: content-box;
+  }

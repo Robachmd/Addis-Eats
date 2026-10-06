@@ -5,9 +5,11 @@ import "./globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en" >
-      <body>
+      <body className="min-h-screen flex flex-col">
         <Header/>
-        {children}
+        <main className="flex-1">
+          {children}
+        </main>
         <Footer/>
       </body>
     </html>
