@@ -24,7 +24,7 @@ function CartClient(){
                 <p>Your basket is empty,please add some dishes</p>
             ):(
                 <div className="flex flex-col lg:flex-row gap-6 bg-pale-warm-white ">
-                   
+                
                 <div className="flex-1">
                     <div className="flex pl-16">
                     <h1 className="font-bold font-serif">Clay Pot Stews & Provisions</h1>
@@ -38,19 +38,21 @@ function CartClient(){
                             <div className="flex items-center relative px-5 mx-3 ml-9 my-2  gap-4 h-40 rounded-md bg-pure-white" key={item.id}>
                                 <img className="w-24 h-24 object-cover rounded-md" src={`/images/${item.slug}.png`} alt={item.nameEn} />
                                 <div className="flex-1 ">
-                                    <span className="absolute top-5 right-6 flex items-center gap-1 rounded-full border border-rust-red/30 px-2 py-0.5 text-xs font-medium text-mahogany-red">{item.spiceLevel}</span>
+                                    <span className="absolute top-1 left-20 flex items-center gap-1 rounded-full border border-rust-red/30 px-2 py-0.5 text-xs font-medium text-mahogany-red">{item.spiceLevel}</span>
                                     <h1 className="text-mahogany-red text-xl font-bold">{item.nameEn}</h1>
                                     <p>{item.description}</p>
                                 </div>
-                                <div className="flex items-center gap-2">
+                                <div className="flex flex-col items-end gap-2 shrink-0">
                                     <div className="flex justify-end">
-                                        <strong className="text-mahogany-red"> {item.priceETB}ETB</strong>
+                                        <strong className="text-mahogany-red pb-3 pr-2 text-lg"> {item.priceETB}ETB</strong>
                                     </div>
+                                    <div className="flex flex-3">
+                                        <button className="flex items-center justify-center text-pure-white h-8 w-8  rounded-lg bg-rust-red hover:bg-mahogany-red cursor-pointer" onClick={()=>decreaseQuantity(item.id)}> <Minus size={18} /></button>
+                                        <span className="text-mahogany-red font-semibold w-6 pl-1 text-xl">{item.quantity}</span>
+                                        <button className="flex items-center justify-center text-pure-white h-8 w-8  rounded-lg bg-rust-red hover:bg-mahogany-red cursor-pointer" onClick={()=>increaseQuantity(item.id)}> <Plus size={18} /></button>
+                                        <button className="flex h-9 w-9 items-center justify-center rounded-full text-gray-500 hover:bg-red-50 hover:text-red-600"  onClick={()=>removeFromCart(item.id)}> <Trash2  size={28} /></button>
 
-                                    <button className="flex items-center justify-center text-pure-white h-8 w-8  rounded-lg bg-rust-red hover:bg-mahogany-red cursor-pointer" onClick={()=>decreaseQuantity(item.id)}> <Minus size={18} /></button>
-                                    <span className="text-mahogany-red font-semibold w-6 ">{item.quantity}</span>
-                                    <button className="flex items-center justify-center text-pure-white h-8 w-8  rounded-lg bg-rust-red hover:bg-mahogany-red cursor-pointer" onClick={()=>increaseQuantity(item.id)}> <Plus size={18} /></button>
-                                    <button className="flex h-9 w-9 items-center justify-center rounded-full text-gray-500 hover:bg-red-50 hover:text-red-60"  onClick={()=>removeFromCart(item.id)}> <Trash2  size={28} /></button>
+                                    </div>
                                 </div>
 
                             </div>
