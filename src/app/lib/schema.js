@@ -10,3 +10,18 @@ export const orderSchema = z.object({
     address:z.string().min(3,"Enter Your address"),
     paymentMethod: z.string().min(1,"add payment method"),
 });
+export const registerSchema = z.object({
+    name: z.string().min(2, "Name must be at least 2 characters"),
+    email: z.string().email("Enter a valid email"),
+    phone: z.string().regex(/^(09|\+2519)\d{8}$/, "Enter a valid Ethiopian phone number"),
+    password: z.string().min(8, "Password must be at least 8 characters"),
+    confirmPassword: z.string().min(1, "Confirm your password"),
+}).refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
+});
+
+export const loginSchema = z.object({
+    email: z.string().email("Enter a valid email"),
+    password: z.string().min(1, "Password is required"),
+});

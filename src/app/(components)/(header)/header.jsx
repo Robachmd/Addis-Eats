@@ -2,6 +2,7 @@
 import { Heart, ShoppingCart } from "lucide-react";
 import React from 'react'
 import Link from 'next/link'
+import LogoutButton from "../LogoutButton";
 import { useCartStore } from '../(store)/cartStore';
 function Header() {
   const total=useCartStore((state)=>state.total)
@@ -17,7 +18,7 @@ return (
                 <li><Link href="/checkout">Checkout</Link></li>
                 <li><Link href="/register">register</Link></li>
                 <li><Link href="/login">login</Link></li>
-                {itemCounts!==0 && <div className='flex flex-2 items-center gap-3 bg-dark-forest-green text-pure-white p-1 rounded-md'>
+                <li><LogoutButton /></li>                {itemCounts!==0 && <div className='flex flex-2 items-center gap-3 bg-dark-forest-green text-pure-white p-1 rounded-md'>
                                 <div>
                                   <li><ShoppingCart size={20}/></li>
                                 </div>

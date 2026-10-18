@@ -1,7 +1,17 @@
 import React from 'react'
 // import Link from 'next/link'
 // import FilterDish from '../../(components)/(CategoryFilter)/FilterDish';
-import MenuWrapper from '@/app/(components)/(menu-wrapper)/MenuWrapper';
+import MenuWrapper from '../../(components)/(menu-wrapper)/MenuWrapper';
+
+export const metadata = {
+    title: "Menu",
+    description:
+      "Explore Ethiopian Doro Wat, Tibs, Kitfo, Shiro, and fasting dishes at Addis Eats.",
+    alternates: {
+      canonical: "/menu",
+    },
+  };
+  
 export default  async function Menu() {
     const response= await fetch('https://addis-eats-backend.onrender.com/menu/', {
         next: { revalidate: 3600 }

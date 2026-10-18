@@ -1,10 +1,10 @@
-import React from 'react'
-import CheckoutForm from './CheckoutForm'
+import CheckoutForm from "./CheckoutForm";
 
-function Checkout() {
+export default async function Checkout() {
+
   return (
-    <CheckoutForm/>
-  )
+    <main>
+      <CheckoutForm />
+    </main>
+  );
 }
-
-export default Checkout
