@@ -1,6 +1,7 @@
 import React from 'react'
 // import Link from 'next/link'
 // import FilterDish from '../../(components)/(CategoryFilter)/FilterDish';
+import { Suspense } from "react";
 import MenuWrapper from '../../(components)/(menu-wrapper)/MenuWrapper';
 
 export const metadata = {
@@ -26,6 +27,7 @@ export default  async function Menu() {
         return <p>No dishes available.</p>
     }
   return (
-    <MenuWrapper dishes={dishes} />
-  )
+    <Suspense fallback={<p>Loading menu...</p>}>
+        <MenuWrapper dishes={dishes} />
+    </Suspense>  )
 }
