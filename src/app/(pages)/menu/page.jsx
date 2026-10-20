@@ -2,7 +2,7 @@ import React from 'react'
 // import Link from 'next/link'
 // import FilterDish from '../../(components)/(CategoryFilter)/FilterDish';
 import { Suspense } from "react";
-import MenuWrapper from '../../(components)/(menu-wrapper)/MenuWrapper';
+import {MenuWrapper} from '../../(components)/(menu-wrapper)/MenuWrapper';
 
 export const metadata = {
     title: "Menu",

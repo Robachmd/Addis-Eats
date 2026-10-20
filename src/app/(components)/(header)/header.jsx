@@ -16,18 +16,19 @@ return (
                 <li><Link href="/menu">Menu</Link></li>
                 <li><Link href="/cart">Order & Cart</Link></li>
                 <li><Link href="/checkout">Checkout</Link></li>
+                <li><Link href="/dashboard">Dashboard</Link></li>
                 <li><Link href="/register">register</Link></li>
                 <li><Link href="/login">login</Link></li>
-                <li><LogoutButton /></li>                {itemCounts!==0 && <div className='flex flex-2 items-center gap-3 bg-dark-forest-green text-pure-white p-1 rounded-md'>
-                                <div>
-                                  <li><ShoppingCart size={20}/></li>
-                                </div>
-                                <div>
-                                    <li ><strong>{total} </strong>ETB </li>
-                                    <li><strong>{itemCounts}</strong> items </li>
-                                </div>
-                            </div>            
-                
+                <li><LogoutButton /></li>                
+                {itemCounts!==0 && <div className='flex flex-2 items-center gap-3 bg-dark-forest-green text-pure-white p-1 rounded-md'>
+                    <div>
+                        <li><ShoppingCart size={20}/></li>
+                    </div>
+                    <div>
+                        <li ><strong>{total} </strong>ETB </li>
+                        <li><strong>{itemCounts}</strong> items </li>
+                    </div>
+                </div>            
                 }
 
             </ul>

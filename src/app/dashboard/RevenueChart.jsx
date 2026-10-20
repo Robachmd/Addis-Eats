@@ -1,10 +1,6 @@
-
 "use client";
 
-import {
-  BarChart, Bar, LineChart, Line,
-  XAxis, YAxis, Tooltip, ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const etb = (v) =>
   new Intl.NumberFormat("en-ET", {
@@ -33,9 +29,7 @@ export default function RevenueChart({ revenue, daily }) {
 
       <section>
         <h2 className="mb-1 font-bold">Orders Per Day</h2>
-        <p className="mb-4 text-sm text-gray-600">
-          October 1–10, 2026 · Unit: number of orders
-        </p>
+        <p className="mb-4 text-sm text-gray-600">October 1–10, 2026 · Unit: number of orders</p>
 
         <div className="h-72">
           <ResponsiveContainer width="100%" height="100%">
@@ -43,11 +37,7 @@ export default function RevenueChart({ revenue, daily }) {
               <XAxis dataKey="date" />
               <YAxis allowDecimals={false} />
               <Tooltip />
-              <Line
-                dataKey="orders"
-                stroke="#1B4D8E"
-                name="Orders"
-              />
+              <Line dataKey="orders" stroke="#1B4D8E" name="Orders" />
             </LineChart>
           </ResponsiveContainer>
         </div>
