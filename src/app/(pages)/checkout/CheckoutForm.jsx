@@ -47,8 +47,7 @@ function CheckoutForm() {
                   <label htmlFor="name" className="text-sm font-medium text-gray-700">
                     Recipient Name
                   </label>
-                  <input
-                    className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
+                  <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
                     type="text"
                     name="name"
                     id="name"
@@ -61,8 +60,7 @@ function CheckoutForm() {
                   <label htmlFor="phone" className="text-sm font-medium text-gray-700">
                     Phone
                   </label>
-                  <input
-                    className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
+                  <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
                     type="tel"
                     name="phone"
                     id="phone"
@@ -76,8 +74,7 @@ function CheckoutForm() {
                 <label htmlFor="email" className="text-sm font-medium text-gray-700">
                   Email
                 </label>
-                <input
-                  className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red w-full"
+                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red w-full"
                   type="email"
                   name="email"
                   id="email"
@@ -96,8 +93,7 @@ function CheckoutForm() {
                 <label htmlFor="subcity" className="text-sm font-medium text-gray-700">
                   Subcity
                 </label>
-                <input
-                  className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
+                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
                   id="subcity"
                   type="text"
                   name="subcity"
@@ -114,8 +110,7 @@ function CheckoutForm() {
                 <label htmlFor="address" className="text-sm font-medium text-gray-700">
                   Specific Address / Landmark
                 </label>
-                <input
-                  className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
+                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
                   id="address"
                   type="text"
                   name="address"
@@ -148,8 +143,7 @@ function CheckoutForm() {
                 <label htmlFor="notes" className="text-sm font-medium text-gray-700">
                   Delivery Information / Notes
                 </label>
-                <textarea
-                  className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
+                <textarea className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
                   name="notes"
                   id="notes"
                   rows={3}
@@ -165,11 +159,7 @@ function CheckoutForm() {
             <div className="flex flex-col divide-y divide-gray-100 max-h-96 overflow-y-auto pr-1">
               {items.map((item) => (
                 <div className="flex items-center gap-4 py-3" key={item.id}>
-                  <img
-                    className="w-16 h-16 object-cover rounded-md flex-shrink-0"
-                    src={`/images/${item.slug}.png`}
-                    alt={item.nameEn}
-                  />
+                  <img className="w-16 h-16 object-cover rounded-md flex-shrink-0" src={`/images/${item.slug}.png`} alt={item.nameEn} />
                   <div className="flex flex-col flex-grow">
                     <h3 className="font-semibold text-mahogany-red">{item.nameEn}</h3>
                     <p className="text-xs text-gray-500 line-clamp-1">{item.ingredients}</p>
@@ -187,16 +177,14 @@ function CheckoutForm() {
               <span className="text-mahogany-red">{total} ETB</span>
             </div>
             <div className="flex justify-evenly">
-              <button
-                className="w-fit mt-2 py-3 bg-mahogany-red text-white font-medium rounded-lg cursor-pointer hover:opacity-95 transition disabled:opacity-50"
+              <button className="w-fit mt-2 py-3 bg-mahogany-red text-white font-medium rounded-lg cursor-pointer hover:opacity-95 transition disabled:opacity-50"
                 type="submit"
                 disabled={pending}
               >
                 {pending ? "Sending..." : "Confirm Order"}
               </button>
               {state?.id && (
-                <button
-                  className="w-fit mt-2 py-3 bg-mahogany-red text-white font-medium rounded-lg cursor-pointer"
+                <button className="w-fit mt-2 py-3 bg-mahogany-red text-white font-medium rounded-lg cursor-pointer"
                   type="button"
                   onClick={handleCancel}
                 >

@@ -11,16 +11,14 @@ export function MenuWrapper({ dishes }) {
   const pathname = usePathname();
   const selectedCategory = searchParams.get("category") || "All";
   const search = searchParams.get("search") || "";
-  const { data, error, isValidating, isLoading } = useSWR("https://addis-eats-backend.onrender.com/menu/", fetcher, {
+  const { data, error, isValidating, isLoading,mutate } = useSWR("https://addis-eats-backend.onrender.com/menu/",searchParams, fetcher, {
     fallbackData: { data: dishes },
     revalidateOnFocus: true,
     dedupingInterval: 2000,
   });
 
   const currentDishes = data?.data ?? dishes ?? [];
-
-  const filteredDishes =
-    selectedCategory === "All" ? currentDishes : currentDishes.filter((dish) => dish.category === selectedCategory);
+  const filteredDishes = selectedCategory === "All" ? currentDishes : currentDishes.filter((dish) => dish.category === selectedCategory);
 
   const searchedDishes = filteredDishes.filter( (dish) =>
       dish.nameEn.toLowerCase().includes(search.toLowerCase()) ||

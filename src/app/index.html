@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Fashion Content Automation Platform — Full Business & System Blueprint</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #222;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fdfdfd;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: #111;
+            border-bottom: 3px solid #111;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 1.6em;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #444;
+            margin-top: 25px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #dcdcdc;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .card-grid {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .pricing-card {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .pricing-card h3 {
+            margin-top: 0;
+            color: #000;
+        }
+        .stat-box {
+            background: #f7f9fa;
+            border-left: 4px solid #333;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        @media print {
+            body { padding: 0; background: #fff; }
+            .pricing-card { break-inside: avoid; }
+            table { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI Fashion Content Automation Platform — Full Business & System Blueprint</h1>
+
+    <h2>1. The business idea</h2>
+    <p>The product is a subscription-based SaaS platform that helps fashion boutiques consistently market their products on social media without needing to create every post manually.</p>
+    <p>The system acts as a virtual fashion marketing assistant. It plans content, creates fashion inspiration, writes captions, organizes campaigns, schedules posts, and automatically publishes approved content to connected social accounts where the official platform APIs allow it.</p>
+    <p>The first market is Ethiopia, starting with a focused pilot among boutiques in Addis Ababa. Once the product proves that customers use it regularly and are willing to pay, it can expand to other Ethiopian cities and international markets.</p>
+
+    <div class="image-container">
+        <img src="https://images.openai.com/static-rsc-4/Mdbo9fP3UWoGYFUUGOBShe3on2dc2iYPfN-q3kSUN6Dklp6JD2uJfhzhR4dlPF2IXSlM8vw9oVDarvLC5FO38DJzOZbxMcHUVwgdICunhboIGEY8PpJGd6a3jnFs_OQckn9_JMLtohBh_wZyMH2DnQg0ahLpzaProR4B52jjbhU?purpose=inline" alt="Fashion inspiration campaign example">
+    </div>
+    <h3>Fashion inspiration</h3>
+    <p>The platform creates outfit ideas based on style, occasion, color coordination, and seasonal themes. These posts can use AI-generated models and illustrative fashion imagery.</p>
+
+    <div class="image-container">
+        <img src="https://images.openai.com/static-rsc-4/0heVoWe3PyshQSlj41MyYqLLGHK7B9YCOgVZvAatpMz4MKsPxVvt2vFukiHq-LW-8La8qfKPZkyb4E3HEZCFTOL8bwIGdZ6w0SW3B0vvLs3G5IVAJKDRVe03g7i2v_6dF8sopmoUD3kJ2_TNas6Ls5TYG6ntpEbzi0FDT5JLBl8?purpose=inline" alt="Real product promotion showcase">
+    </div>
+    <h3>Real product promotion</h3>
+    <p>Boutique owners can optionally upload actual product photos for new arrivals and restocks. They can also upload photos for discounts and special offers. These uploads are optional; the owner can use text and campaign details instead.</p>
+
+    <div class="image-container">
+        <img src="https://images.openai.com/static-rsc-4/YXoTkz8V2i7FEsJ99oWA3FdT_QOL7CfktFdtizxcMsv07jFen3G79bdkgtNjT6Cwb9-D2xuvTYQi7wJuIlOrLo66rlMpnRuACGcQdITEe7bxUODm-2r9_HtacLDB87A5Z2UdIjSSZEoXOfyVkdg2bMl9ydLibwSyL1COviqqSUk?purpose=inline" alt="Automated publishing preview">
+    </div>
+    <h3>Automated publishing</h3>
+    <p>The platform builds a weekly content calendar, follows the boutique’s rules, and schedules three posts per week. Publishing occurs automatically only after the necessary account connections, permissions, and content approvals are configured.</p>
+    <p><strong>Important product rule:</strong> the system must distinguish between fashion inspiration and real products for sale. It must never make an AI-generated outfit look like a confirmed item in the boutique’s inventory.</p>
+
+    <h2>2. The biggest problems the system solves</h2>
+    <ul>
+        <li><strong>Problem 1: Creating content takes too much time</strong><br><em>Solution:</em> The platform creates a planned batch of fashion content and captions, then schedules the posts.</li>
+        <li><strong>Problem 2: Inconsistent posting</strong><br><em>Solution:</em> A calendar maintains the three-post-per-week routine and identifies missing content before the publishing date.</li>
+        <li><strong>Problem 3: Running out of creative ideas</strong><br><em>Solution:</em> The platform rotates between style aesthetics, occasions, color combinations, outfit series, and real-product announcements.</li>
+        <li><strong>Problem 4: Professional marketing can be expensive</strong><br><em>Solution:</em> One subscription combines much of the repetitive content-planning and creation workflow without replacing every professional photography or marketing need.</li>
+        <li><strong>Problem 5: New arrivals, restocks, and promotions are difficult to organize</strong><br><em>Solution:</em> A dedicated campaign workflow uses owner-supplied details and optional product photos to prepare accurate promotional posts.</li>
+        <li><strong>Problem 6: Owners struggle to know what content is working</strong><br><em>Solution:</em> Provide a simple dashboard of published posts, available engagement metrics, publishing failures, and content categories performing best.</li>
+    </ul>
+    <p><em>The business promise should be less time spent on repetitive marketing and more consistent, organized social media activity. Do not promise guaranteed sales or follower growth.</em></p>
+
+    <h2>3. Complete content system: what the platform creates</h2>
+    <p>The content engine uses a library of repeatable content categories selected and rotated by the platform across the calendar according to owner preferences.</p>
+
+    <h3>A. Style aesthetics</h3>
+    <div style="display: flex; gap: 15px; margin: 15px 0;">
+        <div style="flex: 1;"><img src="https://images.openai.com/static-rsc-4/H6188DYIu-oM8r2_-gglXsoQIV566FkOZnPcj02FtwPvwd8rQzUnf6z30PS1j35RPxO0Q4Wj13tUvbRHd0ZYzPiWXJP0DyyjHmxRoaPqvH67fJNk3PSD1EPp3v2C6ZuFZMN6EERNJ3rS4hIQO3D4ZL4qF3nm7k1L4GAwqZBuDkg?purpose=inline" style="width:100%; border-radius:6px;" alt="Old Money"></div>
+        <div style="flex: 1;"><img src="https://images.openai.com/static-rsc-4/5IkVtdE6cNoBObW5oLfCIsExH1cmjDlQfVJMKFjiTymbzzB5QCsKwCselO1WI0kJ2SIn3aPODJositAOWhIZg1WV2UoLNq7_KwPBCo31Gq51KT198sH908k2sQq0L28PIDnO8rt4hv4M4alnN0L421qVMdoxPC73vCQFKOZTV3U?purpose=inline" style="width:100%; border-radius:6px;" alt="Business Professional"></div>
+        <div style="flex: 1;"><img src="https://images.openai.com/static-rsc-4/Hm1MHZcBwdcvi2xFkYtypt_l0Kw0_wVcsPSKeMBoxs4z7VVO4HU0Z9pKuMRrwKklPVtigiI_jr21X-6k9a0z9jeQCZfdKItGw93x6Hy3NwKN-O510G_bKDAgY9XZxs_kyF8uwyecKi4Csv36R7blvAT5rWOyL0zWfwCULHGT5Ns?purpose=inline" style="width:100%; border-radius:6px;" alt="Casual & Sporty"></div>
+    </div>
+    <ul>
+        <li><strong>Old money and timeless elegance:</strong> Classic coats, tailored trousers, knitwear, loafers, neutral colors, and refined accessories.</li>
+        <li><strong>Business professional:</strong> Blazers, office trousers, formal shoes, shirts, dresses, and professional color combinations.</li>
+        <li><strong>Casual, sporty, feminine, and masculine styles:</strong> Everyday outfits, streetwear, activewear inspiration, relaxed looks, and different personal aesthetics.</li>
+    </ul>
+
+    <h3>B. Outfit ideas by event</h3>
+    <ul>
+        <li><strong>Weddings and formal events:</strong> Guest outfits, elegant dresses, suits, shoes, and accessories.</li>
+        <li><strong>Trips and travel:</strong> Comfortable travel looks, layering, and outfits that work together.</li>
+        <li><strong>Dinner, parties, and dates:</strong> Smart-casual looks, evening wear, and accessory suggestions.</li>
+        <li><strong>Hiking, sports, and outdoor activities:</strong> Practical outfit inspiration with factual suitability claims.</li>
+    </ul>
+
+    <h3>C. Color matching and interchangeable outfits</h3>
+    <ul>
+        <li><strong>Neutral palette:</strong> Cream, beige, white, camel, and chocolate brown.</li>
+        <li><strong>Blue and white:</strong> Navy, light blue, white, and coordinated accessories.</li>
+        <li><strong>Earth tones:</strong> Olive, cream, tan, and brown.</li>
+        <li><strong>Burgundy and monochrome:</strong> Burgundy, black, grey, and white.</li>
+        <li><strong>Denim combinations:</strong> Denim blue, white, grey, and camel.</li>
+    </ul>
+    <p>For each palette, the system generates interchangeable men's and women's outfit ideas, suggests shoes and accessories, and shows how one garment can be styled in multiple ways.</p>
+
+    <h3>D. “30 Days, 30 Outfits” series</h3>
+    <p>A reusable content campaign providing 30 distinct daily ideas that boutiques can schedule across their calendar weeks.</p>
+
+    <h3>E. New arrivals and restocks — optional photo upload</h3>
+    <p>Owners can select New Arrival or Restock, optionally upload photos, enter product details, review visuals and captions, and approve/schedule. Photos are preserved accurately without modifying product colors or cuts.</p>
+
+    <h3>F. Discounts and special offers — optional photo upload</h3>
+    <p>Owners enter promotion titles, exact discounts, start/end dates, eligible categories, terms, and optional photos. The platform enforces strict accuracy rules so pricing or expiry dates are never fabricated.</p>
+
+    <h3>Content publishing schedule</h3>
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>Content type</th>
+            <th>Photo upload</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Style aesthetic or outfit inspiration</td>
+            <td>Not required</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>Color matching or event outfit</td>
+            <td>Not required</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>New arrival, restock, or special offer</td>
+            <td>Optional</td>
+        </tr>
+    </table>
+
+    <h2>4. How strong is the demand in Ethiopia?</h2>
+    <div class="stat-box">
+        <h3>9.8M</h3>
+        <p>Facebook potential ad reach (Ethiopia, October 2025)</p>
+        <h3>1.55M</h3>
+        <p>Instagram potential ad reach (Ethiopia, late 2025)</p>
+        <p><em>Source: DataReportal, Digital 2026: Ethiopia. Estimates represent ad reach, not verified active subscribers.</em></p>
+    </div>
+    <p>A 2024 Addis Ababa University study examined social media adoption challenges in Addis Ababa’s garment industry (310 participants), supporting local investigation of the problem.</p>
+
+    <h3>Who is most likely to pay?</h3>
+    <ul>
+        <li>Boutiques regularly posting on Facebook or Instagram.</li>
+        <li>Clothing shops frequently receiving new stock.</li>
+        <li>Stores running recurring promotions.</li>
+        <li>Owners managing marketing independently without dedicated agencies.</li>
+    </ul>
+
+    <h3>How to prove demand before investing heavily</h3>
+    <ol>
+        <li>Interview 15–20 boutique owners in Addis Ababa regarding workflows and pain points.</li>
+        <li>Build a small demonstration using real boutique photos for arrivals/offers and separate inspiration.</li>
+        <li>Offer a short paid pilot to test real financial commitment.</li>
+        <li>Track repeated usage, content approval consistency, and subscription renewals.</li>
+    </ol>
+
+    <h3>Illustrative revenue model</h3>
+    <table>
+        <tr>
+            <th>Paying boutiques</th>
+            <th>Monthly fee</th>
+            <th>Monthly recurring revenue</th>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>ETB 1,000</td>
+            <td>ETB 20,000</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>ETB 1,000</td>
+            <td>ETB 100,000</td>
+        </tr>
+        <tr>
+            <td>500</td>
+            <td>ETB 1,000</td>
+            <td>ETB 500,000</td>
+        </tr>
+    </table>
+
+    <h2>5. Full system design: how it works</h2>
+    <ol>
+        <li><strong>Boutique account and brand settings:</strong> Name, logo, audience, style, language, brand colors, preferences.</li>
+        <li><strong>Content planner:</strong> Selects eligible categories and builds a three-post-per-week calendar.</li>
+        <li><strong>AI content engine:</strong> Creates concepts, captions, visuals, and video assets.</li>
+        <li><strong>Content checks and approval:</strong> Validates brand rules, product claims, offer dates, and permissions.</li>
+        <li><strong>Scheduling and publishing:</strong> Publishes via official APIs or provides manual export.</li>
+        <li><strong>Results and improvement:</strong> Displays publishing status and engagement analytics.</li>
+    </ol>
+
+    <h2>6. Recommended technical architecture</h2>
+    <table>
+        <tr>
+            <th>Component</th>
+            <th>Recommendation</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Frontend and backend</td>
+            <td>JavaScript + Next.js App Router</td>
+            <td>Dashboard, server-side logic, API endpoints</td>
+        </tr>
+        <tr>
+            <td>Database</td>
+            <td>PostgreSQL</td>
+            <td>Store structured business and campaign data</td>
+        </tr>
+        <tr>
+            <td>ORM</td>
+            <td>Prisma</td>
+            <td>Manage database migrations and queries</td>
+        </tr>
+        <tr>
+            <td>Authentication</td>
+            <td>Secure managed auth library</td>
+            <td>Login, sessions, password security</td>
+        </tr>
+        <tr>
+            <td>File storage</td>
+            <td>S3-compatible object storage</td>
+            <td>Store uploaded and generated media assets</td>
+        </tr>
+        <tr>
+            <td>Background processing</td>
+            <td>Redis-backed queue and workers</td>
+            <td>Process long-running tasks and scheduled jobs</td>
+        </tr>
+        <tr>
+            <td>AI integrations</td>
+            <td>Provider-based adapters</td>
+            <td>Switch AI services seamlessly</td>
+        </tr>
+        <tr>
+            <td>Social publishing</td>
+            <td>Official platform APIs</td>
+            <td>Publish supported content securely</td>
+        </tr>
+        <tr>
+            <td>Payments</td>
+            <td>Market-supported provider</td>
+            <td>Subscription billing and payment status</td>
+        </tr>
+    </table>
+
+    <h2>7. Database design: what information the system stores</h2>
+    <ul>
+        <li><code>users</code>: Login identity and account information</li>
+        <li><code>boutiques</code>: Business name, brand settings, language, preferences</li>
+        <li><code>memberships</code>: User access levels and roles per boutique</li>
+        <li><code>subscriptions</code>: Plan, billing status, usage limits</li>
+        <li><code>social_accounts</code>: Connected accounts and encrypted tokens</li>
+        <li><code>content_categories</code>: Available styles, occasions, themes</li>
+        <li><code>content_posts</code>: Captions, status, platform targets</li>
+        <li><code>media_assets</code>: Uploaded photos, generated media references</li>
+        <li><code>products</code>: Item details for arrival and restock posts</li>
+        <li><code>campaigns</code>: Discount and promotional details</li>
+        <li><code>scheduled_posts</code>: Timing, job status, and retries</li>
+        <li><code>publishing_logs</code>: API responses and failure logs</li>
+        <li><code>analytics_snapshots</code>: Historical engagement metrics</li>
+        <li><code>audit_logs</code>: User actions and campaign change records</li>
+    </ul>
+
+    <h2>8. Security and reliability requirements</h2>
+    <ul>
+        <li><strong>Tenant isolation:</strong> Strict record separation per boutique.</li>
+        <li><strong>Secure connections:</strong> Encrypted token storage.</li>
+        <li><strong>Permission checks:</strong> Role verification on every operation.</li>
+        <li><strong>Offer validation:</strong> Price, discount, and expiry verification prior to publishing.</li>
+        <li><strong>Duplicate prevention:</strong> Idempotency checks on scheduled jobs.</li>
+        <li><strong>Failure handling:</strong> Automated retries and error logging.</li>
+        <li><strong>Usage limits:</strong> Fair-use caps on generation resources.</li>
+    </ul>
+
+    <h2>9. Subscription and pricing strategy</h2>
+    <div class="card-grid">
+        <div class="pricing-card">
+            <h3>Starter</h3>
+            <p><strong>ETB 500–1,000 / month</strong></p>
+            <ul>
+                <li>Three posts per week</li>
+                <li>Core inspiration categories</li>
+                <li>Caption generation & calendar</li>
+                <li>Basic scheduling</li>
+            </ul>
+        </div>
+        <div class="pricing-card">
+            <h3>Growth</h3>
+            <p><strong>ETB 1,500–3,000 / month</strong></p>
+            <ul>
+                <li>Everything in Starter</li>
+                <li>New-arrival & restock campaigns</li>
+                <li>Discount & promo workflows</li>
+                <li>Approval workflow & analytics</li>
+            </ul>
+        </div>
+        <div class="pricing-card">
+            <h3>Premium</h3>
+            <p><strong>ETB 4,000+ / month</strong></p>
+            <ul>
+                <li>Higher usage & generation limits</li>
+                <li>Multi-account support</li>
+                <li>Advanced scheduling & video</li>
+                <li>Team access & reporting</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>10. Step-by-step launch plan</h2>
+    <ol>
+        <li><strong>Phase 1 — Validate the problem:</strong> Interview 15–20 boutique owners.</li>
+        <li><strong>Phase 2 — Build the MVP:</strong> Onboarding, calendar, core categories, and caption generation.</li>
+        <li><strong>Phase 3 — Add product campaigns:</strong> Optional photo uploads for arrivals and offers.</li>
+        <li><strong>Phase 4 — Add publishing & scheduling:</strong> Connect Meta APIs with fallback export options.</li>
+        <li><strong>Phase 5 — Run a paid pilot:</strong> Test with real boutiques to measure engagement and renewal intent.</li>
+        <li><strong>Phase 6 — Commercial launch:</strong> Refine limits, support, and scale across Ethiopian businesses.</li>
+        <li><strong>Phase 7 — International expansion:</strong> Add new languages and market templates.</li>
+    </ol>
+
+    <h2>11. How to measure success</h2>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Why it matters</th>
+        </tr>
+        <tr>
+            <td>Paying subscribers</td>
+            <td>Shows direct customer willingness to pay</td>
+        </tr>
+        <tr>
+            <td>Monthly recurring revenue</td>
+            <td>Measures core subscription income</td>
+        </tr>
+        <tr>
+            <td>Renewal and churn</td>
+            <td>Evaluates ongoing product value</td>
+        </tr>
+        <tr>
+            <td>Posts successfully published</td>
+            <td>Measures workflow reliability</td>
+        </tr>
+        <tr>
+            <td>Approval rate</td>
+            <td>Indicates generated content utility</td>
+        </tr>
+        <tr>
+            <td>Weekly active boutiques</td>
+            <td>Tracks recurring platform adoption</td>
+        </tr>
+        <tr>
+            <td>Time saved per boutique</td>
+            <td>Validates core value proposition</td>
+        </tr>
+    </table>
+
+    <h2>Final business positioning</h2>
+    <p>The product is an <strong>AI-powered marketing assistant for fashion boutiques</strong>—not just an image generator.</p>
+    <p>It combines a fashion content library, brand-specific AI generation, optional real-product photo uploads for new arrivals/restocks and promotions, scheduling, publishing, and performance reporting into a single subscription service.</p>
+    <p>Its market opportunity in Ethiopia is backed by local social media penetration and digital marketing research, with growth driven by verified paid customer validation, reliable execution, and sustainable operating margins.</p>
+
+</body>
+</html>
