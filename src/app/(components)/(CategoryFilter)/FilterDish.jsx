@@ -10,7 +10,7 @@ const addToCart = useCartStore((state) => state.addToCart);
 return (
 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 md:gap-2">
     {dishes.map((item) => (
-    <article key={item.id} className="group flex flex-col pt-8 bg-pure-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+    <article key={item.id} className="group flex flex-col bg-pure-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         <Link href={`/menu/dish/${item.id}`} className="block overflow-hidden">
         <div className="relative overflow-hidden">
             <img src={`/images/${item.slug}.png`} alt={item.nameEn} width={400} height={300} loading="lazy" className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500" />
