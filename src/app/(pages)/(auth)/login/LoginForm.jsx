@@ -9,7 +9,7 @@ export default function LoginPage() {
   const [state, formAction, pending] = useActionState(loginUser, null);
 
   const searchParams = useSearchParams();
-  const requestedNext = searchParams.get("next") || "/menu";
+  const requestedNext = searchParams.get("next") || "/";
 
   const safeNext =requestedNext.startsWith("/") && !requestedNext.startsWith("//") && !requestedNext.includes("\\")? requestedNext : "/menu";
 

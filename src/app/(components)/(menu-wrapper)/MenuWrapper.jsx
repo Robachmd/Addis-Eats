@@ -64,8 +64,8 @@ export function MenuWrapper({ dishes }) {
           {isValidating && !isLoading && <p className="text-xs text-taupe-brown">Checking for menu updates...</p>}
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-          <aside className="w-full lg:w-64 lg:shrink-0">
+        <div className="flex flex-col lg:flex-row gap-3 lg:gap-5">
+          <aside className="w-full lg:w-60 lg:shrink-0">
             <div className="bg-pure-white rounded-xl border border-gray-100 shadow-sm p-4 md:p-5 lg:sticky lg:top-24">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-semibold font-serif text-mahogany-red">Categories</h2>
