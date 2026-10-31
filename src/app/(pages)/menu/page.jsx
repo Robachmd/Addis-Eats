@@ -22,7 +22,7 @@ export default  async function Menu() {
     }
     const result= await response.json()
     const dishes= result?.data|| [];
-    console.log(result)
+    // console.log(result)
     if (dishes.length===0){
         return <p>No dishes available.</p>
     }

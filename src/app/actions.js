@@ -26,7 +26,6 @@ export async function loginUser(previousState, formData) {
       fieldErrors: checkInput.error.flatten().fieldErrors,
     };
   }
-
   await setSession();
 
   const nextUrl = getSafeNext(formData);
@@ -48,9 +47,7 @@ export async function registerUser(previousState, formData) {
       fieldErrors: checkInput.error.flatten().fieldErrors,
     };
   }
-
   await setSession();
-
   const nextUrl = getSafeNext(formData);
 
   redirect(nextUrl);

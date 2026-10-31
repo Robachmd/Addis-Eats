@@ -7,7 +7,6 @@ export function middleware(request) {
     const loginUrl = new URL("/login", request.url);
 
     const nextUrl = request.nextUrl.pathname ;
-
     loginUrl.searchParams.set("next", nextUrl);
 
     return NextResponse.redirect(loginUrl);

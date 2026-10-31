@@ -11,10 +11,7 @@ export default function LoginPage() {
   const searchParams = useSearchParams();
   const requestedNext = searchParams.get("next") || "/menu";
 
-  const safeNext =
-    requestedNext.startsWith("/") && !requestedNext.startsWith("//") && !requestedNext.includes("\\")
-      ? requestedNext
-      : "/menu";
+  const safeNext =requestedNext.startsWith("/") && !requestedNext.startsWith("//") && !requestedNext.includes("\\")? requestedNext : "/menu";
 
   const inputClass = "w-full rounded-lg border border-gray-300 p-3 outline-none focus:border-amber-800";
 

@@ -27,7 +27,6 @@ export default async function OpenGraphImage({ params }) {
       }}
     >
       <div style={{ fontSize: 30 }}>Addis Eats</div>
-
       <div style={{ marginTop: 30 }}>{dish ? dish.nameEn : "Dish Not Found"}</div>
 
       {dish && <div style={{ marginTop: 20, fontSize: 36 }}>{dish.priceETB} ETB</div>}

@@ -10,6 +10,7 @@ function CheckoutForm() {
   const items = useCartStore((state) => state.items);
   const total = useCartStore((state) => state.total);
   const [message, setMessage] = useState("");
+  
   const [state, formAction, pending] = useActionState(placeOrder, null);
   async function handleCancel() {
     if (!state?.id) return;
@@ -18,7 +19,7 @@ function CheckoutForm() {
       await cancelOrder(state.id);
       await mutate("/api/orders");
     } catch (error) {
-      console.error("Failed to cancel order:", error);
+      setMessage("Failed to cancel order. Please try again.");
     }
     setMessage(`order ${state.id} cancelled succefully`);
   }
@@ -47,12 +48,7 @@ function CheckoutForm() {
                   <label htmlFor="name" className="text-sm font-medium text-gray-700">
                     Recipient Name
                   </label>
-                  <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                  />
+                  <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red" type="text" name="name" id="name" required />
                   {state?.fieldErrors?.name && <p className="text-red-500 text-xs">{state.fieldErrors.name[0]}</p>}
                 </div>
 
@@ -60,12 +56,7 @@ function CheckoutForm() {
                   <label htmlFor="phone" className="text-sm font-medium text-gray-700">
                     Phone
                   </label>
-                  <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    required
-                  />
+                  <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red" type="tel" name="phone" id="phone" required />
                   {state?.fieldErrors?.phone && <p className="text-red-500 text-xs">{state.fieldErrors.phone[0]}</p>}
                 </div>
               </div>
@@ -74,12 +65,7 @@ function CheckoutForm() {
                 <label htmlFor="email" className="text-sm font-medium text-gray-700">
                   Email
                 </label>
-                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red w-full"
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                />
+                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red w-full" type="email" name="email" id="email" required />
                 {state?.fieldErrors?.email && <p className="text-red-500 text-xs">{state.fieldErrors.email[0]}</p>}
               </div>
             </div>
@@ -93,12 +79,7 @@ function CheckoutForm() {
                 <label htmlFor="subcity" className="text-sm font-medium text-gray-700">
                   Subcity
                 </label>
-                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
-                  id="subcity"
-                  type="text"
-                  name="subcity"
-                  required
-                />
+                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red" id="subcity" type="text" name="subcity" required />
                 {state?.fieldErrors?.subcity && <p className="text-red-500 text-xs">{state.fieldErrors.subcity[0]}</p>}
               </div>
               <div key={items.id}>
@@ -110,12 +91,7 @@ function CheckoutForm() {
                 <label htmlFor="address" className="text-sm font-medium text-gray-700">
                   Specific Address / Landmark
                 </label>
-                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
-                  id="address"
-                  type="text"
-                  name="address"
-                  required
-                />
+                <input className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red" id="address" type="text" name="address" required />
                 {state?.fieldErrors?.address && <p className="text-red-500 text-xs">{state.fieldErrors.address[0]}</p>}
               </div>
             </div>
@@ -125,11 +101,7 @@ function CheckoutForm() {
                 <label htmlFor="option" className="text-sm font-medium text-gray-700">
                   Payment Method
                 </label>
-                <select
-                  className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
-                  name="paymentMethod"
-                  id="option"
-                >
+                <select className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red" name="paymentMethod" id="option" >
                   <option value="telebirr">Telebirr</option>
                   <option value="cbe">CBE </option>
                   <option value="master">Mastercard</option>
@@ -138,16 +110,12 @@ function CheckoutForm() {
                   <p className="text-red-500 text-xs">{state.fieldErrors.paymentMethod[0]}</p>
                 )}
               </div>
-
               <div className="flex flex-col gap-1">
                 <label htmlFor="notes" className="text-sm font-medium text-gray-700">
                   Delivery Information / Notes
                 </label>
-                <textarea className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"
-                  name="notes"
-                  id="notes"
-                  rows={3}
-                ></textarea>
+                <textarea className="rounded-lg border border-gray-300 p-2.5 bg-soft-coral-tint text-dark-espresso outline-none focus:border-mahogany-red"  name="notes" id="notes" rows={3} >
+                  </textarea>
                 {state?.fieldErrors?.notes && <p className="text-red-500 text-xs">{state.fieldErrors.notes[0]}</p>}
               </div>
             </div>
@@ -160,7 +128,7 @@ function CheckoutForm() {
               {items.map((item) => (
                 <div className="flex items-center gap-4 py-3" key={item.id}>
                   <img className="w-16 h-16 object-cover rounded-md flex-shrink-0" src={`/images/${item.slug}.png`} alt={item.nameEn} />
-                  <div className="flex flex-col flex-grow">
+                    <div className="flex flex-col flex-grow">
                     <h3 className="font-semibold text-mahogany-red">{item.nameEn}</h3>
                     <p className="text-xs text-gray-500 line-clamp-1">{item.ingredients}</p>
                     <div className="flex justify-between text-sm mt-1">
@@ -177,17 +145,12 @@ function CheckoutForm() {
               <span className="text-mahogany-red">{total} ETB</span>
             </div>
             <div className="flex justify-evenly">
-              <button className="w-fit mt-2 py-3 bg-mahogany-red text-white font-medium rounded-lg cursor-pointer hover:opacity-95 transition disabled:opacity-50"
-                type="submit"
-                disabled={pending}
-              >
+              <button className="w-fit mt-2 py-3 bg-mahogany-red text-white font-medium rounded-lg cursor-pointer hover:opacity-95 transition disabled:opacity-50" type="submit" disabled={pending} >
                 {pending ? "Sending..." : "Confirm Order"}
               </button>
               {state?.id && (
-                <button className="w-fit mt-2 py-3 bg-mahogany-red text-white font-medium rounded-lg cursor-pointer"
-                  type="button"
-                  onClick={handleCancel}
-                >
+                <button className="w-fit mt-2 py-3 bg-mahogany-red text-white font-medium rounded-lg cursor-pointer" type="button"
+                  onClick={handleCancel}>
                   Cancel order
                 </button>
               )}
